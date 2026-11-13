@@ -1,4 +1,4 @@
-const CACHE = 'health-meter-bd-v2';
+const CACHE = 'health-meter-bd-v3';
 const ASSETS = [
   './',
   'index.html',
@@ -7,7 +7,9 @@ const ASSETS = [
   'icons/icon-192.png',
   'icons/icon-512.png',
   'icons/icon-maskable-512.png',
-  'icons/favicon-64.png'
+  'icons/favicon-64.png',
+  'icons/favicon-32.png',
+  'favicon.ico'
 ];
 
 self.addEventListener('install', (e) => {
