@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Health Meter BD - BMI & BMR ক্যালকুলেটর</title>
 <meta name="description" content="BMI, BMR ও TDEE হিসাব করুন, ওজন কমানো/বাড়ানোর পরামর্শ ও খাবারের তালিকা পান। Health Meter BD">
-<meta name="theme-color" content="#059669">
+<meta name="theme-color" content="#122b49">
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
@@ -56,17 +56,17 @@ body{
 button,input{font-family:inherit;font-size:inherit;color:inherit}
 .topbar{
   position:sticky;top:0;z-index:30;display:flex;align-items:center;gap:12px;
-  padding:8px 14px;padding-top:calc(8px + env(safe-area-inset-top));
-  background:linear-gradient(160deg,#d1fae5 0%,#a7f3d0 100%);box-shadow:0 3px 12px rgba(5,150,105,.18);
+  padding:11px 14px;padding-top:calc(11px + env(safe-area-inset-top));
+  background:#122b49;box-shadow:0 3px 12px rgba(0,0,0,.35);
 }
 .hero{background:linear-gradient(160deg,#d1fae5 0%,#a7f3d0 100%);border-radius:0 0 30px 30px;padding:8px 22px 28px;box-shadow:0 10px 24px rgba(5,150,105,.16)}
 .hero h2{margin:0;font-family:'Galada','Hind Siliguri','Noto Sans Bengali',sans-serif;font-weight:400;font-size:2.15rem;line-height:1.3;color:#065f46}
 .hero p{margin:8px 0 0;color:#047857;font-weight:500;font-size:.98rem}
-.topbar .titles h1{color:#064e3b;font-size:1.12rem}
-.topbar .titles p{color:#047857;margin:0;font-family:'Galada','Hind Siliguri','Noto Sans Bengali',sans-serif;font-size:.92rem;line-height:1.3}
-.topbar .logo{width:38px;height:38px;border-radius:11px}
-.topbar .icon-btn{width:38px;height:38px;border-radius:12px}
-.topbar .icon-btn{background:rgba(255,255,255,.75);border-color:rgba(5,150,105,.25);color:#047857}
+.topbar .titles h1{color:#fff;font-size:1.2rem}
+.topbar .titles p{color:#cbd5e1;margin:0;font-family:'Galada','Hind Siliguri','Noto Sans Bengali',sans-serif;font-size:.97rem;line-height:1.3}
+.topbar .logo{width:46px;height:46px;border-radius:13px}
+.topbar .icon-btn{width:44px;height:44px;border-radius:13px}
+.topbar .icon-btn{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.18);color:#fff}
 .logo{width:44px;height:44px;border-radius:13px;flex:none;box-shadow:0 4px 12px rgba(0,0,0,.25)}
 .titles{flex:1;min-width:0}
 .titles h1{margin:0;font-size:1.3rem;line-height:1.3;font-weight:700;letter-spacing:.2px}
@@ -226,7 +226,7 @@ footer{text-align:center;padding:26px 16px calc(34px + env(safe-area-inset-botto
 .tgbtn{margin-top:20px;display:flex;align-items:center;justify-content:center;gap:10px;padding:13px;border-radius:16px;background:#229ED9;color:#fff;font-weight:700;text-decoration:none}
 .tgbtn svg{width:22px;height:22px}
 .menu-wrap{position:relative;flex:none}
-.menu-pop{color:var(--text);position:absolute;right:0;top:50px;min-width:190px;background:var(--card);border:1px solid var(--border);border-radius:16px;box-shadow:var(--shadow);padding:6px;z-index:40;display:none}
+.menu-pop{color:var(--text);position:absolute;right:0;top:54px;min-width:190px;background:var(--card);border:1px solid var(--border);border-radius:16px;box-shadow:var(--shadow);padding:6px;z-index:40;display:none}
 .menu-pop.open{display:block}
 .menu-pop button{width:100%;text-align:left;background:transparent;border:0;padding:12px 14px;border-radius:12px;font-weight:600;cursor:pointer;display:flex;gap:10px;align-items:center}
 .menu-pop button:active{background:var(--soft)}
@@ -251,7 +251,7 @@ body.app .devcard-wrap{display:none}
   <div class="titles"><h1>Health Meter BD</h1><p>আপনার BMI, BMR ও TDEE হিসাব করুন</p></div>
   <div class="menu-wrap" id="menuWrap">
     <button class="icon-btn" id="menuBtn" aria-label="মেনু" aria-haspopup="true" aria-expanded="false">
-      <svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="5" r="2"/><circle cx="12" cy="12" r="2"/><circle cx="12" cy="19" r="2"/></svg>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M4 6.5h16M4 12h16M4 17.5h16"/></svg>
     </button>
     <div class="menu-pop" id="menuPop" role="menu">
       <button type="button" id="openDev" role="menuitem">👨‍💻 ডেভেলপার তথ্য</button>
@@ -462,7 +462,7 @@ body.app .devcard-wrap{display:none}
   function applyMeta() {
     var m = document.querySelector('meta[name=theme-color]');
     var d = root.getAttribute('data-theme') === 'dark';
-    if (m) m.setAttribute('content', d ? '#065f46' : '#059669');
+    if (m) m.setAttribute('content', '#122b49');
     var ic = $('#themeIc'), lb = $('#themeLbl');
     if (ic) ic.textContent = d ? '☀️' : '🌙';
     if (lb) lb.textContent = d ? 'লাইট মোড' : 'ডার্ক মোড';
