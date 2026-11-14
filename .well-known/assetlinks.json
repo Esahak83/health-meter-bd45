@@ -1,0 +1,8 @@
+[{
+      "relation": ["delegate_permission/common.handle_all_urls"],
+      "target": {
+        "namespace": "android_app",
+        "package_name": "app.vercel.healthmeterbd.twa",
+        "sha256_cert_fingerprints": ["26:BC:9F:B8:18:47:92:BC:F3:53:14:03:7B:66:31:A4:C9:D6:2A:04:EB:E6:67:C0:50:E6:AF:F8:38:28:EF:04"]
+      }
+    }]
