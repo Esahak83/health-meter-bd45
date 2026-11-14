@@ -4,11 +4,11 @@ const ASSETS = [
   'index.html',
   'manifest.webmanifest',
   'photo.jpg',
-  'icons/icon-192.png',
-  'icons/icon-512.png',
-  'icons/icon-maskable-512.png',
-  'icons/favicon-64.png',
-  'icons/favicon-32.png',
+  'icon-192.png',
+  'icon-512.png',
+  'icon-maskable-512.png',
+  'favicon-64.png',
+  'favicon-32.png',
   'favicon.ico'
 ];
 
