@@ -1,4 +1,4 @@
-const CACHE = 'health-meter-bd-v3';
+const CACHE = 'health-meter-bd-v4';
 const ASSETS = [
   './',
   'index.html',
