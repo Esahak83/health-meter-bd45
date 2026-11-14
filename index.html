@@ -23,7 +23,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Galada&display=swap" rel="stylesheet">
 <script>
 /* থিম আগে সেট করা হচ্ছে যেন পেজ খোলার সময় ঝলক না দেয় */
 (function () {
@@ -54,14 +54,16 @@ body{
   line-height:1.55;font-size:16px;transition:background .25s,color .25s;
 }
 button,input{font-family:inherit;font-size:inherit;color:inherit}
-header{
-  position:sticky;top:0;z-index:20;background:linear-gradient(135deg,#10b981,#047857);color:#fff;
-  border-radius:0 0 22px 22px;box-shadow:0 8px 22px rgba(4,120,87,.28);
+.topbar{
+  position:sticky;top:0;z-index:30;display:flex;align-items:center;gap:12px;
   padding:12px 16px;padding-top:calc(12px + env(safe-area-inset-top));
-  display:flex;align-items:center;gap:12px;
+  background:#d1fae5;box-shadow:0 2px 10px rgba(5,150,105,.10);
 }
-[data-theme="dark"] header{background:linear-gradient(135deg,#065f46,#064e3b);box-shadow:0 8px 22px rgba(0,0,0,.45)}
-header .icon-btn{background:rgba(255,255,255,.18);border-color:rgba(255,255,255,.3);color:#fff}
+.hero{background:linear-gradient(160deg,#d1fae5 0%,#a7f3d0 100%);border-radius:0 0 30px 30px;padding:8px 22px 28px;box-shadow:0 10px 24px rgba(5,150,105,.16)}
+.hero h2{margin:0;font-family:'Galada','Hind Siliguri','Noto Sans Bengali',sans-serif;font-weight:400;font-size:2.15rem;line-height:1.3;color:#065f46}
+.hero p{margin:8px 0 0;color:#047857;font-weight:500;font-size:.98rem}
+.topbar .titles h1{color:#064e3b}
+.topbar .icon-btn{background:rgba(255,255,255,.75);border-color:rgba(5,150,105,.25);color:#047857}
 .logo{width:44px;height:44px;border-radius:13px;flex:none;box-shadow:0 4px 12px rgba(0,0,0,.25)}
 .titles{flex:1;min-width:0}
 .titles h1{margin:0;font-size:1.3rem;line-height:1.3;font-weight:700;letter-spacing:.2px}
@@ -235,16 +237,13 @@ footer{text-align:center;padding:26px 16px calc(34px + env(safe-area-inset-botto
 .sheet li{margin-bottom:6px}
 .sheet small{color:var(--muted)}
 body.app footer{display:none}
-body.app .devcard-wrap{display:none;position:fixed;inset:0;z-index:60;background:rgba(0,0,0,.6);overflow:auto;padding:16px;max-width:none}
-body.app .devcard-wrap.open{display:block}
-body.app .devcard{max-width:520px;margin:20px auto;position:relative}
-body.app .dev-close{display:grid;place-items:center;position:absolute;right:14px;top:14px;width:36px;height:36px;border-radius:50%;border:1px solid var(--border);background:var(--field);cursor:pointer;font-size:1.1rem;line-height:1}
+body.app .devcard-wrap{display:none}
 .hidden{display:none!important}
 </style>
 </head>
 <body>
 
-<header>
+<div class="topbar">
   <img class="logo" src="icon-192.png" alt="" width="44" height="44">
   <div class="titles"><h1>Health Meter BD</h1></div>
   <div class="menu-wrap" id="menuWrap">
@@ -257,6 +256,10 @@ body.app .dev-close{display:grid;place-items:center;position:absolute;right:14px
       <button type="button" id="openAbout" role="menuitem">ℹ️ অ্যাপ সম্পর্কে</button>
     </div>
   </div>
+</div>
+<header class="hero">
+  <h2>স্বাস্থ্য পরীক্ষা করুন</h2>
+  <p>আপনার BMI, BMR ও TDEE হিসাব করুন</p>
 </header>
 
 <main>
@@ -492,7 +495,7 @@ body.app .dev-close{display:grid;place-items:center;position:absolute;right:14px
   document.addEventListener('click', closeMenu);
   $('#openDev').addEventListener('click', function () {
     closeMenu();
-    if (document.body.classList.contains('app')) { devSec.classList.add('open'); devSec.scrollTop = 0; }
+    if (document.body.classList.contains('app')) { location.href = 'developer.html'; }
     else { devSec.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
   });
   var aboutSec = $('#aboutSection');

@@ -1,7 +1,8 @@
-const CACHE = 'health-meter-bd-v4';
+const CACHE = 'health-meter-bd-v5';
 const ASSETS = [
   './',
   'index.html',
+  'developer.html',
   'manifest.webmanifest',
   'photo.jpg',
   'icon-192.png',
